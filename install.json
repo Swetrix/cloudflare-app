@@ -20,8 +20,8 @@
       "projectID": {
         "title": "Project ID",
         "description": "The identifier of the project you want to track stats into. You can find the Project ID in the settings of your project on Swetrix.",
-        "type": "boolean",
-        "default": false,
+        "type": "string",
+        "placeholder": "for example: STEzHcB1rALV",
         "order": 3
       },
       "respect_dnt": {
