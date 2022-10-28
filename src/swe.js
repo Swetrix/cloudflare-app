@@ -1,5 +1,6 @@
 (function (window) {
   // the swetrix.js code goes below
+  // the source code of swetrix.js is available at https://github.com/Swetrix/swetrix-js
 
   (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
