@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json.schemastore.org/install",
+  "resources": {
+    "head": [
+      {
+        "src": "./src/swe.js",
+        "type": "script"
+      }
+    ],
+    "body": [
+      {
+        "src": "./src/cf.js",
+        "type": "script"
+      }
+    ]
+  },
+  "preview": {
+    "hide": true
+  },
+  "options": {
+    "properties": {
+      "respect_dnt": {
+        "title": "Respect DNT",
+        "description": "By setting this flag to true, we will not collect ANY kind of data about the user with the DNT (Do Not Track) setting. This setting is not true by default because our service anonymises all incoming data and does not pass it on to any third parties under any circumstances.",
+        "type": "boolean",
+        "default": false,
+        "order": 3
+      },
+      "advanced_settings_toggle": {
+        "title": "Advanced settings",
+        "description": "Settings useful to the developers.",
+        "type": "boolean",
+        "default": false,
+        "order": 10
+      },
+      "custom_api": {
+        "title": "Custom API URL",
+        "description": "If you selfhost Swetrix, set a custom URL of the API server here",
+        "type": "string",
+        "placeholder": "https://api.swetrix.com/log",
+        "order": 11,
+        "showIf": {
+          "advanced_settings_toggle": true
+        }
+      },
+      "tv_unique": {
+        "title": "Store unique visits only",
+        "description": "If true, only unique events will be saved. This param is useful when tracking single-page landing websites.",
+        "type": "boolean",
+        "default": false,
+        "order": 12,
+        "showIf": {
+          "advanced_settings_toggle": true
+        }
+      },
+      "tv_ignore": {
+        "title": "Ignore pages",
+        "description": "A list of regular expressions or string pathes to ignore. For example: /dashboard or /^/projects/i setting will force script to ignore all pathes which start with /projects or equal to /dashboard. Please pay attention, that the pathes always start with /",
+        "type": "array",
+        "items": {
+          "title": "Page URN",
+          "type": "string",
+          "placeholder": "/dashboard"
+        },
+        "order": 13,
+        "showIf": {
+          "advanced_settings_toggle": true
+        }
+      },
+      "tv_no_heartbeat": {
+        "title": "Don't heartbeat",
+        "description": "Do not send Heartbeat requests to the server. By setting this to true you will not be able to see the realtime amount of users on your website.",
+        "type": "boolean",
+        "default": false,
+        "order": 14,
+        "showIf": {
+          "advanced_settings_toggle": true
+        }
+      },
+      "tv_heartbeat_on_background": {
+        "title": "Enable Strict UTMs",
+        "description": "Send Heartbeat requests when the website tab is not active in the browser. Setting this to true means that users who opened your website in inactive browser tab or window will not be counted into users realtime statistics. Setting this to true is usually useful for services like Spotify or Youtube.",
+        "type": "boolean",
+        "default": false,
+        "order": 15,
+        "showIf": {
+          "advanced_settings_toggle": true
+        }
+      }
+    }
+  }
+}

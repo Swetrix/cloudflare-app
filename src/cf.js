@@ -1,0 +1,1 @@
+// Connecting Cloudflare app options with the Swetrix.js script here
