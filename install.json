@@ -83,7 +83,7 @@
         }
       },
       "tv_heartbeat_on_background": {
-        "title": "Enable Strict UTMs",
+        "title": "Heartbeat on background",
         "description": "Send Heartbeat requests when the website tab is not active in the browser. Setting this to true means that users who opened your website in inactive browser tab or window will not be counted into users realtime statistics. Setting this to true is usually useful for services like Spotify or Youtube.",
         "type": "boolean",
         "default": false,
