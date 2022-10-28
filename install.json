@@ -5,9 +5,7 @@
       {
         "src": "./src/swe.js",
         "type": "script"
-      }
-    ],
-    "body": [
+      },
       {
         "src": "./src/cf.js",
         "type": "script"
@@ -19,6 +17,13 @@
   },
   "options": {
     "properties": {
+      "projectID": {
+        "title": "Project ID",
+        "description": "The identifier of the project you want to track stats into. You can find the Project ID in the settings of your project on Swetrix.",
+        "type": "boolean",
+        "default": false,
+        "order": 3
+      },
       "respect_dnt": {
         "title": "Respect DNT",
         "description": "By setting this flag to true, we will not collect ANY kind of data about the user with the DNT (Do Not Track) setting. This setting is not true by default because our service anonymises all incoming data and does not pass it on to any third parties under any circumstances.",
@@ -83,6 +88,16 @@
         "type": "boolean",
         "default": false,
         "order": 15,
+        "showIf": {
+          "advanced_settings_toggle": true
+        }
+      },
+      "debug": {
+        "title": "Enable debug",
+        "description": "When set to true, all tracking logs will be printed to console.",
+        "type": "boolean",
+        "default": false,
+        "order": 16,
         "showIf": {
           "advanced_settings_toggle": true
         }
